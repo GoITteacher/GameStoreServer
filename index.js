@@ -4,12 +4,14 @@ const app = express();
 const port = 3000;
 const BASE_URL = "http://localhost:3333";
 const axios = axios2.create({
-  baseUrl: BASE_URL,
+  baseURL: BASE_URL,
 });
 
-app.get("/games", (req, res) => {
+app.get("/games", async (req, res) => {
+  // const params = new URLSearchParams(req.query);
+  // const data = await axios.get("/games", { params });
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.send("List of games");
+  res.json([]);
 });
 
 app.post("/games", (req, res) => {
