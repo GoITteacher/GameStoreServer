@@ -6,7 +6,7 @@
   "scripts": {
     "push": "git add . && git commit -m 'update' && git push",
     "start": "node index.js",
-    "server":"&& json-server --no-cors --watch db.json --port 3333"
+    "server":"json-server --no-cors --watch db.json --port 3333"
   },
   "repository": {
     "type": "git",
