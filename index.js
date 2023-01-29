@@ -8,19 +8,22 @@ const axios = axios2.create({
 });
 
 app.get("/games", (req, res) => {
-  console.log(req);
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.send("List of games");
 });
 
 app.post("/games", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.json({});
 });
 
 app.get("/users", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.send("List of users");
 });
 
 app.post("/users", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.json({});
 });
 
