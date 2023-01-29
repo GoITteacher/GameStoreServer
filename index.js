@@ -1,8 +1,11 @@
 const express = require("express");
-const axios = require("axios");
+const axios2 = require("axios");
 const app = express();
 const port = 3000;
-const BASE_URL = "";
+const BASE_URL = "http://localhost:3333";
+const axios = axios2.create({
+  baseUrl: BASE_URL,
+});
 
 app.get("/games", (req, res) => {
   console.log(req);
