@@ -1,0 +1,33 @@
+const express = require("express");
+const axios2 = require("axios");
+const app = express();
+const port = 3000;
+app.get("/games", (req, res) => {
+  console.log(req);
+  res.send("List of games");
+});
+
+app.post("/games", (req, res) => {
+  res.json({});
+});
+
+app.get("/users", (req, res) => {
+  res.send("List of users");
+});
+
+app.post("/users", (req, res) => {
+  res.json({});
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+const sendRequest = async (endpoint) => {
+  try {
+    const response = await axios.get(`http://other-server.com${endpoint}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
